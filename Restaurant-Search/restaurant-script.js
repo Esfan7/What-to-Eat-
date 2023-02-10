@@ -7,6 +7,8 @@ var geoLocation = '&filter=rect:-89.097540,39.668983,-88.399274,40.383412';
 var searchParameters = geoLocation + '&limit=10&apiKey=';
 var restaurantSearchURL = apiRestaurantsURL + searchParameters + apiKey;
 
+var searchFormEl = document.querySelector('#search-form');
+
 
 
 //function that gets city and state names from api to inform search function
@@ -18,7 +20,13 @@ var restaurantSearchURL = apiRestaurantsURL + searchParameters + apiKey;
 function handleFormSubmit() {
 
     //function that takes user input and converts to api parameter to insert into var geoLocation that informs search parameters
+    var citySearchVal = document.querySelector('#city-search')
 
+
+    if (!citySearchVal) {
+        console.error('You need a search input value!');
+        return;
+    }
     //run printResults() after converting user search into search parameters
     
 }
