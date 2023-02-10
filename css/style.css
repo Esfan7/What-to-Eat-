@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(192, 190, 190);
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: rgb(95, 93, 93);
+}
+
+h2{
+    text-align:center;
+    font-size: 25px;
+}
+
+#stayIN:hover,
+#goOUT:hover{
+    color: black;
+}
+
+#stayIN,
+#goOUT{
+    border: 1px solid black;
+    box-shadow: 0 0 20px;
+    background-color: white;
+    border-radius: 10px;
+    color: rgb(95, 93, 93);
+    font-size: 50px;
+    margin: 50px 70px ;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hero{
+    height: 450px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("../Website-Banner-New.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    position: relative;
+}
