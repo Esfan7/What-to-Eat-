@@ -8,6 +8,8 @@ var searchParameters = geoLocation + '&limit=10&apiKey=';
 var restaurantSearchURL = apiRestaurantsURL + searchParameters + apiKey;
 
 var searchFormEl = document.querySelector('#search-form');
+var citySearchVal = document.querySelector('#city-search').value;
+var placeID;
 
 
 
@@ -21,37 +23,68 @@ function handleFormSubmit(event) {
     event.preventDefault();
 
     //function that takes user input and converts to api parameter to insert into var geoLocation that informs search parameters
+<<<<<<< Updated upstream
     var citySearchVal = document.querySelector('#city-search').value;
     console.log(citySearchVal);
   
+=======
+    console.log(citySearchVal);
+    
+    
+    getCityData(citySearchVal);
+
+    //need to put placeID into restaurant url to print results
+    function getCityData() {
+        fetch(`https://api.geoapify.com/v1/geocode/search?text=${citySearchVal}&format=json&apiKey=${apiKey}`, {
+    
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            placeID = data.results[1].place_id;
+            console.log(placeID);
+            printResults()
+
+            function printResults() {
+                fetch(restaurantSearchURL, {
+            
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log(data);
+                    for (var i = 0; i < data.features.length; i++) {
+                        console.log(data.features[i].properties.name);
+                        //print out search results to html
+                
+                    }
+                });
+            }
+        });
+    
+    }
+>>>>>>> Stashed changes
 
     if (!citySearchVal) {
         console.error('You need a search input value!');
         return;
     }
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
     //run printResults() after converting user search into search parameters
     
 }
 
+
+
 //function that retreives api data console logs restaurant names, and renders search results
-function printResults() {
-    fetch(restaurantSearchURL, {
-
-    })
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-        for (var i = 0; i < data.features.length; i++) {
-            console.log(data.features[i].properties.name);
-            //print out search results to html
-    
-        }
-    });
-}
-
 
 //event listeners
 searchFormEl.addEventListener('submit',handleFormSubmit);
