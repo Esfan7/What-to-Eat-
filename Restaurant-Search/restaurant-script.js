@@ -17,16 +17,19 @@ var searchFormEl = document.querySelector('#search-form');
 
 
 //function that handles form submit
-function handleFormSubmit() {
+function handleFormSubmit(event) {
+    event.preventDefault();
 
     //function that takes user input and converts to api parameter to insert into var geoLocation that informs search parameters
-    var citySearchVal = document.querySelector('#city-search')
-
+    var citySearchVal = document.querySelector('#city-search').value;
+    console.log(citySearchVal);
+  
 
     if (!citySearchVal) {
         console.error('You need a search input value!');
         return;
     }
+
     //run printResults() after converting user search into search parameters
     
 }
@@ -50,6 +53,5 @@ function printResults() {
 }
 
 
-
-
 //event listeners
+searchFormEl.addEventListener('submit',handleFormSubmit);
