@@ -1,46 +1,46 @@
 var apiKey = '78364b3e32a040fab4225f94bcfe4c5b';
 var apiRestaurantsURL = 'https://api.geoapify.com/v2/places?categories=catering&filter=place:';
 
-//search parameter for geographic information to filter by location
-// var geoLocation = '&filter=rect:-89.097540,39.668983,-88.399274,40.383412';
-//search parameters; can limit amount of results
-var searchParameters = '&limit=10&apiKey=';
-// var restaurantSearchURL = apiRestaurantsURL + searchParameters + apiKey;
+//search parameters; can limits amount of results to 5
+var searchParameters = '&limit=5&apiKey=';
 
 var searchFormEl = document.querySelector('#search-form');
 var citySearchVal = document.querySelector('#city-search').value;
+var resultHeader = document.querySelector('#searched-city-heading');
 var placeID;
 
-
-//function that gets city and state names from api to inform search function
-
+//DOM selectors for result cards
+var restName1 = document.querySelector('#rest-name1');
+var restAdd1 = document.querySelector('#rest-address1');
+var restName2 = document.querySelector('#rest-name2');
+var restAdd2 = document.querySelector('#rest-address2');
+var restName3 = document.querySelector('#rest-name3');
+var restAdd3 = document.querySelector('#rest-address3');
+var restName4 = document.querySelector('#rest-name4');
+var restAdd4 = document.querySelector('#rest-address4');
+var restName5 = document.querySelector('#rest-name5');
+var restAdd5 = document.querySelector('#rest-address5');
 
 
 //function that handles form submit
 function handleFormSubmit(event) {
     event.preventDefault();
+    citySearchVal = document.querySelector('#city-search').value;
 
     //function that takes user input and converts to api parameter to insert into var geoLocation that informs search parameters
     console.log(citySearchVal);
 
-    getCityData(citySearchVal);
-
-    //need to put placeID into restaurant url to print results
-    
+    getRestaurantNames(citySearchVal);    
 
     if (!citySearchVal) {
         console.error('You need a search input value!');
         return;
-    }
-
-
-
-    //run printResults() after converting user search into search parameters
-    
+    }    
 }
 
-function getCityData() {
-    //first fetch method to retrieve place_id to include in search parameter
+//function that retrieves restaurant names from user search 
+function getRestaurantNames() {
+    //first fetch method to retrieve place_id to include in search parameter in printResults()
     fetch(`https://api.geoapify.com/v1/geocode/search?text=${citySearchVal}&format=json&apiKey=${apiKey}`, {
 
     })
@@ -48,19 +48,18 @@ function getCityData() {
         return response.json();
     })
     .then(function (data) {
-        console.log(data);
         placeID = data.results[1].place_id;
-        localStorage.setItem(citySearchVal,placeID)
         console.log(placeID);
+        //store placeID to localStorage to retreive in printResults()
+        localStorage.setItem('place-id',placeID)
         printResults(placeID);
         return;
         
     });
 
-    //prints out restaurant results
+    //prints out restaurant results using placeID as a city search parameter for api
     function printResults() {
-        console.log(placeID)
-        placeID = localStorage.getItem(citySearchVal);
+        placeID = localStorage.getItem('place-id');
 
         fetch(apiRestaurantsURL + placeID + searchParameters + apiKey, {
     
@@ -72,14 +71,29 @@ function getCityData() {
             console.log(data);
             for (var i = 0; i < data.features.length; i++) {
                 console.log(data.features[i].properties.name);
-                //print out search results to html
-                
             }
+            //write city and state to html to confirm user search
+            resultHeader.textContent = 'Here are some restaurants in ' + data.features[0].properties.city + ', ' + data.features[0].properties.state;
+        
+            //print out search results to html    
+            restName1.textContent = data.features[0].properties.name
+            restAdd1.textContent = data.features[0].properties.address_line2
+
+            restName2.textContent = data.features[1].properties.name
+            restAdd2.textContent = data.features[1].properties.address_line2
+
+            restName3.textContent = data.features[2].properties.name
+            restAdd3.textContent = data.features[2].properties.address_line2
+
+            restName4.textContent = data.features[3].properties.name
+            restAdd4.textContent = data.features[3].properties.address_line2
+
+            restName5.textContent = data.features[4].properties.name
+            restAdd5.textContent = data.features[4].properties.address_line2
         });
     }
 }
 
-//function that retreives api data console logs restaurant names, and renders search results
 
 //event listeners
 searchFormEl.addEventListener('submit',handleFormSubmit);
