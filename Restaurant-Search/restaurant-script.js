@@ -23,11 +23,6 @@ function handleFormSubmit(event) {
     event.preventDefault();
 
     //function that takes user input and converts to api parameter to insert into var geoLocation that informs search parameters
-<<<<<<< Updated upstream
-    var citySearchVal = document.querySelector('#city-search').value;
-    console.log(citySearchVal);
-  
-=======
     console.log(citySearchVal);
     
     
@@ -66,18 +61,14 @@ function handleFormSubmit(event) {
         });
     
     }
->>>>>>> Stashed changes
 
     if (!citySearchVal) {
         console.error('You need a search input value!');
         return;
     }
 
-<<<<<<< Updated upstream
-=======
 
 
->>>>>>> Stashed changes
     //run printResults() after converting user search into search parameters
     
 }
