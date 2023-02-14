@@ -8,8 +8,129 @@
     <title>Go Out and Eat!</title>
 </head>
 <body>
+<<<<<<< HEAD
+    <p> <a href ="Recipe-Generator\recipe.html">Stay inside with a recipe</a></p>
     <div>API results in console</div>
+    <div class="dropdown">
+        <button onclick="show_states()">Select State</button>
+    </div>
+    <div id="states">
+        <li><a href='#'></a>Alabama</li>
+        <li><a href='#'></a>Alaska</li>
+        <li><a href='#'></a>Arizona</li>
+        <li><a href='#'></a>Arkansas</li>
+        <li><a href='#'></a>California</li>
+        <li><a href='#'></a>Colorado</li>
+        <li><a href='#'></a>Connecticut</li>
+        <li><a href='#'></a>Delaware</li>
+        <li><a href='#'></a>Florida</li>
+        <li><a href='#'></a>Georgia</li>
+        <li><a href='#'></a>Hawaii</li>
+        <li><a href='#'></a>Idaho</li>
+        <li><a href='#'></a>Illinois</li>
+        <li><a href='#'></a>Indiana</li>
+        <li><a href='#'></a>Iowa</li>
+        <li><a href='#'></a>Kansas</li>
+        <li><a href='#'></a>Kentucky</li>
+        <li><a href='#'></a>Louisiana</li>
+        <li><a href='#'></a>Maine</li>
+        <li><a href='#'></a>Maryland</li>
+        <li><a href='#'></a>Massachusetts</li>
+        <li><a href='#'></a>Michigan</li>
+        <li><a href='#'></a>Minnesota</li>
+        <li><a href='#'></a>Mississippi</li>
+        <li><a href='#'></a>Missouri</li>
+        <li><a href='#'></a>Montana</li>
+        <li><a href='#'></a>Nebraska</li>
+        <li><a href='#'></a>Nevada</li>
+        <li><a href='#'></a>New Hampshire</li>
+        <li><a href='#'></a>New Jersey</li>
+        <li><a href='#'></a>New Mexico</li>
+        <li><a href='#'></a>New York</li>
+        <li><a href='#'></a>North Carolina</li>
+        <li><a href='#'></a>North Dakota</li>
+        <li><a href='#'></a>Ohio</li>
+        <li><a href='#'></a>Oklahoma</li>
+        <li><a href='#'></a>Oregon</li>
+        <li><a href='#'></a>Pennsylvania</li>
+        <li><a href='#'></a>Rhode Island</li>
+        <li><a href='#'></a>South Carolina</li>
+        <li><a href='#'></a>South Dakota</li>
+        <li><a href='#'></a>Tennessee</li>
+        <li><a href='#'></a>Texas</li>
+        <li><a href='#'></a>Utah</li>
+        <li><a href='#'></a>Vermont</li>
+        <li><a href='#'></a>Virginia</li>
+        <li><a href='#'></a>Washington</li>
+        <li><a href='#'></a>West Virginia</li>
+        <li><a href='#'></a>Wisconsin</li>
+        <li><a href='#'></a>Wyoming</li>
+    </div>
+    <script>
+        function show_states(){
+        var click = document.getElementById('states');
+        if(click.style.display==='none'){
+            click.style.display='block';
+        } else {
+            click.style.disply='none';
+        }
+    }
+    </script>
+=======
+<<<<<<< HEAD
+    <div>API results in console</div>
+    <p>HELLO WORLD</p>
+=======
+    <header>
+        <h1>Go out and Eat!</h1>
+        <!-- insert relevant image for design? -->
+    </header>
 
+    <div>
+        <h2 class="">Where do you want to eat?</h2>
+
+
+        <form id="search-form" data-abide novalidate>
+            <!-- search bar for city; autocompletes when user begins typing their city -->
+            <label>City
+              <input id="city-search" type="text" placeholder=".small-12.columns" aria-describedby="exampleHelpText">
+            </label>
+            <p class="help-text" id="exampleHelpText">What city would you like to eat in?</p>
+            <label>
+
+            <!-- drop down search for states to narrow down city autocomplete -->
+            <div class="cell medium-6">
+                <label>State
+                  <select id="select" required>
+                    <option value=""></option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                </label>
+              </div>
+        </form>
+
+        <div class="grid-x grid-margin-x">
+            <fieldset class="cell medium-6">
+                <button class="button" type="submit" value="Submit">Submit</button>
+            </fieldset>
+            <fieldset class="cell medium-6">
+                <button class="button" type="reset" value="Reset">Reset</button>
+            </fieldset>
+        </div>
+    </div>
+
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+>>>>>>> fc24e02b13a8450851d247156746407dbe8153d3
+>>>>>>> 3f03b9eb02078206bb603ab3e8a69b72bb0b6b3d
     <script src="./restaurant-script.js"></script>
 </body>
 </html>
