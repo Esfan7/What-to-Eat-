@@ -4,7 +4,7 @@ function redirectFunction(){
 document.getElementById("return").addEventListener("click", redirectFunction);
 
 var badRequestUrl = g;
-var redirectUrl = './404 Page/404.html';
+var redirectUrl = './404_Page/404.html';
 
 fetch(badRequestUrl).then(function (response) {
     // Check the response value is equal to 404.
