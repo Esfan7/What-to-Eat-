@@ -12,6 +12,7 @@ var submissionForm1 = categoryURL + `${document.querySelector(`#category`)}`;
 var submissionForm2 = areaURL + `${document.querySelector(`#area`)}`;
 
 console.log(submissionForm1);
+console.log(submissionForm2);
 
 function resultsPage(event){
     event.preventDefault()
