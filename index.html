@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>What to Eat?</title>
-</head>
-<body>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="css/style.css" />
+
+  </head>
+  <body>
+    <header> 
+        <h1>Welcome to Recipe and Restaurant Generator</h1>
+        <!--<h2> What are you in the mood for? Please make your selection!</h2>-->
+        <div class = "hero"></div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    </header>  
+
+    <div class="button-group align-spaced">
+        <button id = "stayIN"> I want to stay in </button>
+        <button id = "goOUT"> I want to eat out </button>
+    </div>
+
+    <script src ="script.js"></script>
 </body>
 </html>
