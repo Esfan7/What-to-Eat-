@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What to Eat?</title>
+  <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css" />
+ <script src="recipe-script.js" defer></script>
+</head>
+
+<body>
+  <div class="callout large primary" id="title">
+    <div class="row column text-center">
+    <h1>Recipe Generator</h1>
+    <h2>What would you like to make?</h2>
+    </div>
+</div>
+<div class="row" id="content">
+    <div class="medium-8 columns">
+        <h2>Category of food:</h2>
+          <form name="recipeCategory" id="recipeCategory">
+            <select name="category" id="category">
+            <option value="" selected="selected">Select category</option>
+        </select>
+        <br><br>
+    </div>
+</div>
+
+<div class="row" id="content">
+    <div class="medium-8 columns">
+        <h2>Countries of Cuisine:</h2>
+         <form name="recipeCountry" id="recipeCountry">
+            <select name="country" id="country">
+            <option value="" selected="selected">Select country</option>
+            </select>
+            <br><br>
+        </form>
+    </div>
+</div>
+    <button class="button" type="submit" id="mainBtn">
+      Go out to a restaurant instead…
+  </button>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/what-input.js"></script>
+  <script src="js/vendor/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  </body>
+</html>
