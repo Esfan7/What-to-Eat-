@@ -6,6 +6,7 @@ var searchParameters = '&limit=5&apiKey=';
 
 var searchFormEl = document.querySelector('#search-form');
 var citySearchVal = document.querySelector('#city-search').value;
+var recipeRedirect = document.querySelector('#recipeBtn');
 var resultHeader = document.querySelector('#searched-city-heading');
 var placeID;
 
@@ -45,6 +46,7 @@ function getRestaurantNames() {
 
     })
     .then(function (response) {
+        console.log(response);
         return response.json();
     })
     .then(function (data) {
@@ -55,6 +57,10 @@ function getRestaurantNames() {
         printResults(placeID);
         return;
         
+    })
+    .catch(function (error) {
+        console.log(error)
+        resultHeader.textContent = 'City not found. Please try a searching another city.'
     });
 
     //prints out restaurant results using placeID as a city search parameter for api
@@ -65,6 +71,7 @@ function getRestaurantNames() {
     
         })
         .then(function (response) {
+            console.log(response);
             return response.json();
         })
         .then(function (data) {
@@ -97,3 +104,6 @@ function getRestaurantNames() {
 
 //event listeners
 searchFormEl.addEventListener('submit',handleFormSubmit);
+recipeRedirect.addEventListener('click', function(){
+    window.location.href = "../Recipe-Generator/recipe.html";
+});
