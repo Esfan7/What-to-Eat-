@@ -24,13 +24,11 @@ document.getElementById("userBtn").addEventListener("click", resultsPage);
 
 function redirectFunction(event){
     event.preventDefault()
-
     window.location.href = ".restaurant.html";
 }
+
 document.getElementById("mainBtn").addEventListener("click", function(){
-
     event.preventDefault()
-
     window.location.href = "../Restaurant-Search/restaurant.html";
 
 });
