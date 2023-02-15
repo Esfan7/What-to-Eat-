@@ -17,28 +17,78 @@
     <h2>What would you like to make?</h2>
     </div>
 </div>
-<div class="row" id="content">
+
+<form id="recipe-search-form" data-abide nonvalidate>
+  <div class="row" id="content">
     <div class="medium-8 columns">
         <h2>Category of food:</h2>
           <form name="recipeCategory" id="recipeCategory">
             <select name="category" id="category">
-            <option value="" selected="selected">Select category</option>
+            <option value="">Select Category</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Seafood">Seafood</option> 
+            <option value="Beef">Beef</option> 
+            <option value="Chicken">Chicken</option> 
+            <option value="Dessert">Dessert</option>
+            <option value="Lamb">Lamb</option>  
+            <option value="Miscellaneous">Miscellaneous</option> 
+            <option value="Pork">Pork</option> 
+            <option value="Side">Side</option> 
+            <option value="Starter">Starter</option> 
+            <option value="Vegan">Vegan</option> 
+            <option value="Vegetarian">Vegetarian</option> 
+            <option value="Breakfast">Breakfast</option> 
+            <option value="Goat">Goat</option> 
         </select>
         <br><br>
     </div>
-</div>
+  </div>
 
-<div class="row" id="content">
+  <div class="row" id="content">
     <div class="medium-8 columns">
-        <h2>Country of Cuisine:</h2>
-         <form name="recipeCountry" id="recipeCountry">
-            <select name="country" id="country">
-            <option value="" selected="selected">Select country</option>
+        <h2>Area of Cuisine:</h2>
+         <form name="recipeArea" id="recipeArea">
+            <select name="area" id="area">
+            <option value="">Select area</option>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Canadian">Canadian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Croatian">Croation</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Egyptian">Egyptian</option>
+            <option value="French">French</option>
+            <option value="Greek">Greek</option>
+            <option value="Indian">Indian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Jamaican">Jamaican</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Kenyan">Kenyan</option>
+            <option value="Malaysian">Irish</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Morrocan">Morrocan</option>
+            <option value="Polish">Polish</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Russian">Russian</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Thai">Thai</option>
+            <option value="Tunisian">Tunisian</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Unknown">Unknown</option>
+            <option value="Vietnamese">Vietnamese</option>
+          
             </select>
             <br><br>
         </form>
     </div>
-</div>
+  </div>
+</form>
+
+    <button class="button" type="submit" id="userBtn">
+      Find recipes...
+    </button>
+
     <button class="button" type="submit" id="mainBtn">
       Go out to a restaurant instead…
   </button>
