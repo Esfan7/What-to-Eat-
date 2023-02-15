@@ -6,5 +6,5 @@ stayInEl.addEventListener("click", function() {
 });
 
 goOutEl.addEventListener("click", function(){
-    document.location.replace('./Restaurant-search/restaurant.html');
+    document.location.replace('./Restaurant-Search/restaurant.html');
 });
